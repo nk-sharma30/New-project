@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #2b3441 100%);
+  margin: 0;
+}
+
+#Calculator {
+  min-height: 350px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #444;
+  border-radius: 20px;
+  padding: 20px 15px;
+  background: rgba(34, 40, 49, 0.95);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  transition: box-shadow 0.2s;
+}
+
+input {
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #232526;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border: 1.5px solid #b95820;
+  box-shadow: 0 0 5px #b9582055;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+button {
+  border: none;
+  width: 56px;
+  height: 56px;
+  margin: 6px 2px;
+  border-radius: 50%;
+  background: #393e46;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.08s, box-shadow 0.15s;
+  outline: none;
+  user-select: none;
+}
+
+button:active,
+button.active {
+  background: #b95820;
+  color: #fff;
+  transform: scale(0.93);
+  box-shadow: 0 1px 4px #b9582055;
+}
+
+.operator {
+  background-color: #b95820;
+  color: #fff;
+}
+
+button.operator:active,
+button.operator.active {
+  background: #ff7f2a;
+  color: #fff;
+}
+
+button.equal {
+  background: #1abc9c;
+  color: #fff;
+}
+
+button.equal:active,
+button.equal.active {
+  background: #16a085;
+}
+
+@media (max-width: 480px) {
+  #Calculator {
+    max-width: 98vw;
+    padding: 10px 2vw;
+  }
+  input {
+    font-size: 1.2rem;
+    height: 40px;
+    margin: 10px 0;
+  }
+  button {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+    margin: 4px 1px;
+  }
+}
+
+/* Keyboard accessibility */
+button:focus-visible {
+  outline: 2px solid #b95820;
+  outline-offset: 2px;
+}
